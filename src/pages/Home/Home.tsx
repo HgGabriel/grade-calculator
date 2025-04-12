@@ -5,13 +5,6 @@ import styles from './Home.module.css';
 const Home: React.FC = () => {
   const cards = [
     {
-      title: "Home",
-      icon: "bi-house",
-      description: "Página inicial do sistema",
-      url: "/",
-      color: styles.bgBlue
-    },
-    {
       title: "Calculadora",
       icon: "bi-calculator",
       description: "Ferramenta de cálculos matemáticos",
