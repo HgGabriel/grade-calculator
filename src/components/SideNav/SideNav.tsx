@@ -22,9 +22,12 @@ const SideNav: React.FC = () => {
     }
   };
 
-  if (window.innerWidth <= 768) {
-    setIsMobile(true);
-  }
+  React.useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true);
+    }
+  }, []);
+  
 
   return (
     <div
