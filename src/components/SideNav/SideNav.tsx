@@ -1,9 +1,10 @@
 import { Link, useLocation } from "react-router";
 import styles from "./SideNav.module.css";
-import React from "react";
+import React, { useEffect } from "react";
 
 const SideNav: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [isMobile, setIsMobile] = React.useState(false);
   const location = useLocation();
 
   const toggleNav = () => setIsOpen(!isOpen);
@@ -21,6 +22,10 @@ const SideNav: React.FC = () => {
     }
   };
 
+  if (window.innerWidth <= 768) {
+    setIsMobile(true);
+  }
+
   return (
     <div
       className={`${styles.sideNav} ${!isOpen ? styles.sideNavClosed : ""}`}
@@ -35,9 +40,12 @@ const SideNav: React.FC = () => {
       />
       
       <ul>
+        {isMobile && (
+
         <button className={styles.toggleButton} onClick={toggleNav}>
           <i className={`bi bi-${isOpen ? 'arrow-left' : 'arrow-right'}`}></i>
         </button>
+        )}
         
         {[
           { path: "/", icon: "house", label: "Home" },
