@@ -19,7 +19,7 @@ const Home: React.FC = () => {
       color: styles.bgPurple
     },
     {
-      title: "Notas",
+      title: "Anotações",
       icon: "bi-journal-bookmark",
       description: "Crie e organize suas anotações",
       url: "/notes",
